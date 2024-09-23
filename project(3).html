@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+        body{
+            font-family: Arial,sans-serif;
+            background-color: rgb(35, 35, 35);
+            color: white;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+        .main-header{
+            background-image: url(../img/home-bg.jpg);
+            width: 100vw;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .header-content{
+            text-align: center;
+            display: flex;
+            row-gap: 45px;
+            flex-direction: column;
+        }
+        .la{
+            border: solid red 1px;
+            color: red;
+            height: 10vh;
+            width: 15vw;
+            justify-content: center;
+            align-content: center;
+
+        }
+        .lavish{
+            display: flex;
+            justify-content: center;
+        }
+        
+        .lm{
+            
+            width: 70%;
+            opacity: 0.3;
+        }
+        .lorem{
+            display: flex;
+            justify-content: center; 
+            
+        }
+        .btn{
+            border: solid white 1px;
+            color: white;
+            height: 50px;
+            width: 150px;
+            text-align: center;
+            justify-content: center;
+            align-content: center;
+            background: transparent;
+        }
+        .what-i-do{
+            background-color: rgb(45, 45, 45);
+            height: 60vh;
+            width: 100vw;
+            
+        }
+        .what{
+            display: flex;
+            justify-content: center;
+        }
+        
+        .what-i-do h3 {
+            font-size: 2rem;
+        }
+        .cards{
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+        .card{
+            display: flex;
+            justify-content: space-evenly;
+            column-gap: 25px;
+            
+        }
+        .i{
+            border: solid white 2px;
+            border-radius: 20px;
+        }
+        .para{
+            opacity: 0.5;
+            display: inline-block;
+            width: 18vw;
+        }
+        .text-color{
+            color: blue;
+        }
+        .about-lavish{
+            background-color: black;
+            display: flex;
+            height: 55vh;
+            justify-content: space-evenly;
+            
+        }
+        .progress-bar{
+            background-color: #fff;
+            height: 5px;
+            width: 100%;
+        }
+        .progress {
+            background-color: red;
+            height: 100%;
+            text-align: right;
+            padding-right: 10px;
+            line-height: 1.5em;
+            font-size: 0.3em;
+            color: white;
+       }
+       .section-3 .lo{
+            width: 45vw;
+            opacity: 0.5;
+       }
+       
+       .dd{
+            color: red;
+       }
+       .skills{
+            width: 30vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center; 
+       }
+       .portfolio{
+            width: 100vw;
+            height: auto;
+            background-color: rgb(45, 45, 45);
+            display: grid;
+       }
+       .portfolio-grid {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            padding: 0px 50px;
+       }
+       .port{
+          display: flex;
+          justify-content: center;
+       }
+       .row{
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        } 
+       .contact-info{
+            background-color: black;
+            width: 100vw;
+            height: 80vh;
+            display: flex;
+            justify-content: space-between;
+            padding-left: 12%; 
+       }
+       .left-section{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            width: 45vw;
+            row-gap: 20px;
+            column-gap: 10px;
+       }
+       .section-5{
+            display: flex;
+            column-gap: 25px;
+        
+       }
+       .contact-form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            column-gap: 20px;
+            width: 80%;
+            
+       }
+       .right-section{
+            width: 55vw;
+            display: flex; 
+             
+       }
+       .lt{
+            color: rgb(90, 85, 85);
+       }
+       input{
+            background-color: transparent;
+            height: 35px;
+            border: solid white 1px;
+       }
+       textarea{
+            background-color: transparent;
+            height: 70px;
+            border: solid white 1px;
+       }
+       .sub{
+            background-color: rgb(227, 98, 98);
+            height: 35px;
+            color: white;
+       }
+       .portfolio-overlay {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(204, 58, 58);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: absolute;
+            height: 42%;
+            width: 25%;
+            left: 38%;
+            top: 235%;
+            opacity: 0.5;
+       }
+       @media screen and (min-width:320px) and (max-width:425px){
+        
+        .container{
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+        .main-header{
+            background-image: url(../img/home-bg.jpg);
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+        }
+        .header-content{
+            text-align: center;
+            /* display: flex; */
+            row-gap: 35px;
+            /* flex-direction: column; */
+        }
+        .la{
+            height: 7vh;
+            width: 28vw;
+            font-size: 1rem;
+        }
+        
+        .lm{
+            
+            width: 80%;
+            font-size: 0.5rem;
+            opacity: 0.3;
+        }
+        .btn{
+            height: 30px;
+            width: 100px;
+            font-size: 0.7rem;
+        }
+        .header-content h2{
+            font-size: 0.8rem;
+        }
+        .header-content h1{
+            font-size: 1.3rem;
+        }
+        .what-i-do{
+            height: 70vh;
+            width: 100vw;
+            
+        }
+        
+        .what-i-do h3 {
+            font-size: 1rem;
+        }
+        
+        .card{
+            /* padding-left: 5%;
+            padding-right: 5%; */
+            /* column-gap: 10px; */
+            font-size: 0.8rem;
+            /* display: flex;
+            justify-content: center;
+            align-content: center; */
+            
+        }
+        .cards{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        }
+        .i{
+            border: solid white 2px;
+            border-radius: 55%;
+            height: 5vh;
+            width: 7vw;
+            
+        }
+        .para{
+            opacity: 0.5;
+            display: inline-block;
+            justify-content: space-around;
+            width: 50vw;
+            font-size: 0.7rem;
+        }
+        
+        .about-lavish{
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            height: 80vh;
+            justify-content: space-around;
+            padding-left: 10%;
+            
+        }
+        .progress {
+            padding-right: 10px;
+            line-height: 1.5em;
+            font-size: 0.3em;
+       }
+       .section-3 .lo{
+            width: 80vw;
+            opacity: 0.5;
+       }
+       
+       .lo{
+            font-size: 0.8rem;
+       }
+       .skills{
+            width: 80vw;
+            display: flex;
+            font-size: 0.8rem;
+       }
+       .portfolio-item img{
+            height: 25vh;
+            width: 25vw;
+       }
+       .last-img{
+            height: 27vh;
+            width: 40vw;
+       }
+       #last-img1{
+            height: 27vh;
+            width: 40vw;
+       }
+       .port h3{
+           font-size: 0.8rem;
+       }
+       .row{
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+        }
+        .cm{
+            font-size: 0.8rem;
+        }
+        .i{
+            height: 5vh;
+            width: 5vw;
+        } 
+       .contact-info{
+            flex-direction: column;
+            justify-content: space-around;
+            padding-left: 12%; 
+       }
+       .left-section{
+            width: 80vw;
+            row-gap: 10px;
+       }
+       .right-section{
+            width: 80vw;
+            display: flex; 
+             
+       }
+       .lt{
+            color: rgb(117, 113, 113);
+            font-size: 0.9rem;
+       }
+       input{  
+            height: 15px;
+       }
+       textarea{
+            height: 40px;
+       }
+       .sub{
+            height: 18px;
+       }
+       .portfolio-overlay {
+            height: 50%;
+            width: 50%;
+            position: absolute;
+            height: 18%;
+            width: 15%;
+            left: 42%;
+            top: 272%;
+            opacity: 0.5;
+        
+       }
+       .wa{
+        font-size: 0.5rem;
+       }
+       }
+       @media screen and (min-width:426px) and (max-width:768px) {
+        
+        .header-content{
+            row-gap: 25px;
+        }
+        .la{
+            height: 9vh;
+            width: 20vw;
+            font-size: 0.8rem;
+
+        }
+        .header-content h2{
+            font-size: 1.2rem;
+        }
+        h1{
+            font-size: 1.5rem;
+        }
+        .lavish{
+            display: flex;
+            justify-content: center;
+        }
+        
+        .lm{
+            font-size: 0.8rem;
+            width: 80%;
+            opacity: 0.3;
+        }
+        .btn{
+            border: solid white 1px;
+            color: white;
+            height: 35px;
+            width: 120px;
+        }
+        .what-i-do{
+            height: 70vh;
+            width: 100vw;
+            padding-left: 25px;
+            
+        }
+        
+        .what-i-do h3 {
+            font-size: 1.3rem;
+        }
+        .cards{
+            display: flex;
+            justify-content: space-evenly;
+            align-content: flex-start;
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 20px;
+            font-size: 0.9rem;
+            
+        }
+        .i{
+            border: solid white 2px;
+            border-radius: 20px;
+        }
+        .para{
+            opacity: 0.5;
+            margin: 0;
+            display: inline-block;
+            width: 20vw;
+            font-size: 0.5;
+        }
+        .about-lavish{
+            background-color: black;
+            display: flex;
+            height: 70vh;
+            justify-content: space-evenly;
+            row-gap: 9%;
+        }
+        .lo{
+            font-size: 0.8rem;
+        }
+        .progress-bar{
+            background-color: #fff;
+            height: 7.5px;
+            width: 100%;
+        }
+    
+       .section-3 .lo{
+            width: 45vw;
+            height: 15vw;
+            opacity: 0.5;
+       }
+       .portfolio-item img{
+            height: 28vh;
+            width: 28vw;
+       }
+       .last-img{
+            height: 20vh;
+            width: 40vw;
+       }
+       #last-img1{
+            height: 20vh;
+            width: 40vw;
+       }
+       .port h3{
+           font-size: 0.9rem;
+       }
+       .row{
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+        }
+        .cm{
+            font-size: 0.9rem;
+        }
+       .contact-info{
+            background-color: black;
+            width: 100vw;
+            height: 80vh;
+            display: flex;
+            justify-content: space-around;
+            padding-left: 5%; 
+       }
+       .left-section{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            width: 40vw;
+            row-gap: 20px;
+       }
+       .section-5{
+            display: flex;
+            column-gap: 25px;
+        
+       }
+       .contact-form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            column-gap: 20px;
+            width: 85%;
+            
+       }
+       .right-section{
+            width: 45vw;
+            display: flex; 
+             
+       }
+       .lt{
+            color: rgb(77, 75, 75);
+            font-size: 0.9rem;
+       }
+       input{
+            background-color: transparent;
+            height: 22px;
+            border: solid white 1px;
+       }
+       textarea{
+            background-color: transparent;
+            height: 50px;
+            border: solid white 1px;
+       }
+       .sub{
+            background-color: rgb(227, 98, 98);
+            height: 25px;
+            font-size: 0.8rem;
+            color: white;
+       }
+       .portfolio-overlay {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            height: 25%;
+            width: 22%;
+            left: 39%;
+            top: 260%;
+            opacity: 0.5;
+       }
+       .wa{
+        font-size: 0.69rem;
+       }
+        
+       }
+   
+    </style>
+</head>
+<body>
+    <header class="container">
+        <div class="main-header">
+            <div class="header-content">
+                <h2>Simple and Elegant</h2>
+                    <div class="lavish">
+                        <h3 class="la">L a v i s h</h3>
+                    </div>
+                    <h1>UI & UX SPECIALIST</h1>
+                    <div class="lorem"> 
+                        <p class="lm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ipsam excepturi ducimus cupiditate mollitia quae nemo id nesciunt, reiciendis, velit minima? Odio, consectetur quis. Rerum?</p>
+                    </div><br>
+                    <div class="button">
+                        <button class="btn">Get Started</button>
+                    </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="what-i-do"><br><br><br>
+            <div class="what">
+            <h3 class="wi">What I Do</h3>
+            </div><br><br><br>
+            <div class="cards">
+                <div class="card">
+                    <svg class="i" width="34px" height="34px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 19H21M6 17H18C19.1046 17 20 16.1046 20 15V8C20 6.89543 19.1046 6 18 6H6C4.89543 6 4 6.89543 4 8V15C4 16.1046 4.89543 17 6 17Z" stroke="#e61919" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <div>
+                        <p>Responsive Design</p>
+                        <div class="para"><p>lavis website template is bought to you by <span class="text-color">templatemo</span>.feel free to download and use this</p></div>
+                    </div> 
+                    
+                </div>
+                <div class="card">
+                    <svg class="i" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34px" height="34px" viewBox="0 0 512 512" xml:space="preserve" fill="#000000" transform="rotate(90)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css">  .st0{fill:#e01010;}  </style> <g> <path class="st0" d="M278.172,297.375l-51.203,51.188c0.016,0.594,0.031,1.188,0.031,1.781c0,8.406-1.594,16.781-4.766,24.625 c-3.203,7.813-7.922,15.156-14.375,21.563l-33.672,33.719c-6.453,6.438-13.766,11.156-21.609,14.344 c-7.859,3.188-16.219,4.781-24.609,4.781c-8.375,0-16.75-1.594-24.594-4.75c-7.844-3.219-15.156-7.938-21.625-14.375 c-6.438-6.438-11.156-13.75-14.344-21.594s-4.781-16.219-4.781-24.625c0-8.375,1.594-16.75,4.781-24.594 s7.906-15.156,14.344-21.625l33.719-33.688c6.438-6.406,13.734-11.156,21.594-14.344c7.828-3.188,16.219-4.781,24.594-4.781 c0.594,0,1.188,0.031,1.766,0.063l51.203-51.234c-1.594-0.734-3.203-1.422-4.844-2.078c-15.422-6.25-31.781-9.375-48.125-9.375 s-32.719,3.125-48.125,9.375c-15.422,6.25-29.906,15.688-42.359,28.094l-33.688,33.719c-12.438,12.406-21.859,26.906-28.109,42.344 S0,367.688,0,384.031s3.125,32.719,9.375,48.156c6.25,15.406,15.672,29.906,28.109,42.313 c12.422,12.469,26.922,21.906,42.344,28.125c15.438,6.281,31.797,9.375,48.141,9.375c16.359,0,32.719-3.094,48.141-9.375 c15.422-6.219,29.922-15.656,42.344-28.125l33.703-33.656c12.422-12.469,21.844-26.938,28.109-42.344 c6.266-15.469,9.359-31.813,9.375-48.156c-0.016-16.313-3.109-32.688-9.375-48.156 C279.594,300.594,278.891,298.969,278.172,297.375z"></path> <path class="st0" d="M502.625,79.844c-6.25-15.438-15.672-29.938-28.109-42.359c-12.422-12.422-26.922-21.859-42.359-28.109 C416.734,3.125,400.375,0,384.031,0s-32.719,3.125-48.141,9.375s-29.922,15.688-42.344,28.109l-33.703,33.703 C247.422,83.594,238,98.094,231.734,113.531c-6.266,15.406-9.359,31.781-9.359,48.141c0,16.344,3.094,32.703,9.359,48.141 c0.672,1.625,1.359,3.219,2.094,4.828l51.203-51.203c-0.016-0.578-0.031-1.156-0.031-1.766c0-8.391,1.594-16.781,4.781-24.609 c3.188-7.844,7.906-15.156,14.359-21.625l33.672-33.688c6.453-6.406,13.766-11.141,21.625-14.344 c7.813-3.156,16.203-4.781,24.594-4.781c8.406,0,16.75,1.625,24.625,4.781c7.813,3.203,15.141,7.938,21.594,14.344 c6.438,6.469,11.156,13.781,14.344,21.625c3.156,7.844,4.781,16.219,4.781,24.594c0,8.391-1.625,16.75-4.781,24.625 c-3.188,7.844-7.906,15.156-14.344,21.594l-33.688,33.688c-6.438,6.438-13.766,11.156-21.625,14.344 c-7.828,3.188-16.203,4.781-24.594,4.781c-0.594,0-1.188-0.016-1.766-0.031l-51.203,51.219c1.594,0.719,3.203,1.422,4.813,2.063 c15.453,6.281,31.813,9.406,48.156,9.406s32.719-3.125,48.125-9.406c15.422-6.25,29.906-15.672,42.359-28.094l33.688-33.703 c12.438-12.422,21.859-26.922,28.109-42.359c6.25-15.406,9.375-31.781,9.375-48.125S508.875,95.25,502.625,79.844z"></path> <path class="st0" d="M160.219,351.781c12.234,12.25,32.063,12.25,44.281,0L351.781,204.5c12.219-12.219,12.25-32.031,0-44.281 c-12.234-12.219-32.063-12.219-44.281,0L160.219,307.531C148,319.75,148,339.563,160.219,351.781z"></path> </g> </g></svg>
+                    <div>
+                        <p>Web Templates</p>
+                        <div class="para"><p>we provide a lot of new html5 Templates for you.image credits go to <span class="text-color">pixabay</span> and <span class="text-color">unsplash</span></p></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <svg class="i" width="34px" height="34px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M23.1117 4.49449C23.4296 2.94472 21.9074 1.65683 20.4317 2.227L2.3425 9.21601C0.694517 9.85273 0.621087 12.1572 2.22518 12.8975L6.1645 14.7157L8.03849 21.2746C8.13583 21.6153 8.40618 21.8791 8.74917 21.968C9.09216 22.0568 9.45658 21.9576 9.70712 21.707L12.5938 18.8203L16.6375 21.8531C17.8113 22.7334 19.5019 22.0922 19.7967 20.6549L23.1117 4.49449ZM3.0633 11.0816L21.1525 4.0926L17.8375 20.2531L13.1 16.6999C12.7019 16.4013 12.1448 16.4409 11.7929 16.7928L10.5565 18.0292L10.928 15.9861L18.2071 8.70703C18.5614 8.35278 18.5988 7.79106 18.2947 7.39293C17.9906 6.99479 17.4389 6.88312 17.0039 7.13168L6.95124 12.876L3.0633 11.0816ZM8.17695 14.4791L8.78333 16.6015L9.01614 15.321C9.05253 15.1209 9.14908 14.9366 9.29291 14.7928L11.5128 12.573L8.17695 14.4791Z" fill="#c32222"></path> </g></svg>
+                    <div>
+                        <p>UI&UX Design</p>
+                        <div class="para">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, amet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="about-lavish">
+            <div class="section-3"><br><br><br>
+                <h>About Lavish</h3><br><br>
+                <p class="dd">Designer & Developer</p><br>
+                <p class="lo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium qui molestias, natus adipisci numquam aut commodi vero architecto nihil quod?</p>
+                <p class="lo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ut alias consectetur asperiores esse aut.</p>
+            </div>
+            <div class="skills">
+                <div class="skill">
+                    <span>Web Design</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 95%;">95%</div>
+                    </div><br>
+                </div>
+                <div class="skill">
+                    <span>Mobile Apps</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;">80%</div>
+                    </div><br>
+                </div>
+        
+                <div class="skill">
+                    <span>SEO Stuffs</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%;">70%</div>
+                    </div><br>
+                </div>
+        
+                <div class="skill">
+                    <span>HTML5 & CSS3</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;">90%</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="portfolio-grid"><br><br>
+            <div class="port">
+                <h3>PORTFOLIO</h3>
+            </div><br><br>
+            <div class="row">
+                <div class="portfolio-item">
+                    <img src="../img/portfolio-img1.jpg" alt="Portfolio 1">
+                </div>
+                <div class="portfolio-item">
+                    <img src="../img/portfolio-img2.jpg" alt="Portfolio 2">
+                    <div class="portfolio-overlay">
+                        <div class="wa">
+                            <h3>Web App</h3>
+                            <p>Author: Linda</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="../img/portfolio-img3.jpg" alt="Portfolio 3">
+                </div>
+            </div>
+            <div class="row">
+                <div class="portfolio-item">
+                    <img id="last-img1" src="../img/portfolio-img4.jpg" alt="Portfolio 4">
+                </div>
+                <div class="portfolio-item"></div>
+                    <img class="last-img" src="../img/portfolio-img5.jpg" alt="Portfolio 5">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="contact-info">
+                
+                <div class="left-section">
+                    <div class="cm"><h3>Contact Me</h3></div>
+                    <div class="section-5">
+                        <svg class="i" width="34px" height="34px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 5.5C3 14.0604 9.93959 21 18.5 21C18.8862 21 19.2691 20.9859 19.6483 20.9581C20.0834 20.9262 20.3009 20.9103 20.499 20.7963C20.663 20.7019 20.8185 20.5345 20.9007 20.364C21 20.1582 21 19.9181 21 19.438V16.6207C21 16.2169 21 16.015 20.9335 15.842C20.8749 15.6891 20.7795 15.553 20.6559 15.4456C20.516 15.324 20.3262 15.255 19.9468 15.117L16.74 13.9509C16.2985 13.7904 16.0777 13.7101 15.8683 13.7237C15.6836 13.7357 15.5059 13.7988 15.3549 13.9058C15.1837 14.0271 15.0629 14.2285 14.8212 14.6314L14 16C11.3501 14.7999 9.2019 12.6489 8 10L9.36863 9.17882C9.77145 8.93713 9.97286 8.81628 10.0942 8.64506C10.2012 8.49408 10.2643 8.31637 10.2763 8.1317C10.2899 7.92227 10.2096 7.70153 10.0491 7.26005L8.88299 4.05321C8.745 3.67376 8.67601 3.48403 8.55442 3.3441C8.44701 3.22049 8.31089 3.12515 8.15802 3.06645C7.98496 3 7.78308 3 7.37932 3H4.56201C4.08188 3 3.84181 3 3.63598 3.09925C3.4655 3.18146 3.29814 3.33701 3.2037 3.50103C3.08968 3.69907 3.07375 3.91662 3.04189 4.35173C3.01413 4.73086 3 5.11378 3 5.5Z" stroke="#ec1313" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        <div>
+                            <p class="lt">Phone: 010-020-0340</p>
+                        </div>
+                        
+                    </div>
+                    <div class="section-5">
+                        <svg class="i" width="34px" height="34px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7" stroke="#fa0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <rect x="3" y="5" width="18" height="14" rx="2" stroke="#fa0000" stroke-width="2" stroke-linecap="round"></rect> </g></svg>
+                        <div>
+                            <p class="lt">Email: info@company.com</p>
+                        </div>
+                        
+                    </div>
+                    <div class="section-5">
+                        <svg class="i" width="34px" height="34px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path stroke="#f00a0a" stroke-width="12" d="M96 22a51.88 51.88 0 0 0-36.77 15.303A52.368 52.368 0 0 0 44 74.246c0 16.596 4.296 28.669 20.811 48.898a163.733 163.733 0 0 1 20.053 28.38C90.852 163.721 90.146 172 96 172c5.854 0 5.148-8.279 11.136-20.476a163.723 163.723 0 0 1 20.053-28.38C143.704 102.915 148 90.841 148 74.246a52.37 52.37 0 0 0-15.23-36.943A51.88 51.88 0 0 0 96 22Z"></path><circle cx="96" cy="74" r="20" stroke="#f00a0a" stroke-width="12"></circle></g></svg>
+                        <div>
+                            <p class="lt">Address: 480 Old Walking Street, GL 18080</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="right-section">
+                    <form class="contact-form">
+                        <input type="text" placeholder="Your Name"><br>
+                        <input type="email" placeholder="Your Email"><br>
+                        <textarea placeholder="Your Message"></textarea><br>
+                        <button type="submit" class="sub">Send Me</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+</body>
+</html>
